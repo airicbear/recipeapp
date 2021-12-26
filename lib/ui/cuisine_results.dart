@@ -23,7 +23,7 @@ class _CuisineResultsState extends State<CuisineResults> {
   Future<RecipeList> fetchRecipes() async {
     final response = await http.get(
       Uri.parse(
-        'https://api.edamam.com/api/recipes/v2?type=public&q=recipe&app_id=${Secret.APP_ID}&app_key=${Secret.APP_KEY}&cuisineType=${widget.cuisine}',
+        'https://api.edamam.com/api/recipes/v2?type=public&q=&app_id=${Secret.APP_ID}&app_key=${Secret.APP_KEY}&cuisineType=${widget.cuisine}&diet=balanced',
       ),
     );
 
