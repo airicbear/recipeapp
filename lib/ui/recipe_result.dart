@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipeapp/model/recipe.dart';
+import 'package:recipeapp/ui/recipe_url_view.dart';
 
 class RecipeResult extends StatelessWidget {
   final Recipe recipe;
@@ -45,6 +46,21 @@ class RecipeResult extends StatelessWidget {
               ),
               title: Text(recipe.label),
               titlePadding: const EdgeInsets.only(left: 15),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: InkWell(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => RecipeUrlView(
+                    recipe: recipe,
+                  ),
+                ),
+              ),
+              child: ListTile(
+                title: Text(recipe.url),
+              ),
             ),
           ),
           SliverList(

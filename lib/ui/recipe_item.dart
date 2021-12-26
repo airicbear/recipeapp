@@ -11,16 +11,14 @@ class RecipeItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: InkWell(
-        onTap: () => {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => RecipeResult(
-                recipe: recipe,
-              ),
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => RecipeResult(
+              recipe: recipe,
             ),
-          )
-        },
+          ),
+        ),
         child: Container(
           height: 450.0,
           decoration: BoxDecoration(
